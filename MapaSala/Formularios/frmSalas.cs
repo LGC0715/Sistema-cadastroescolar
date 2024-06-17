@@ -13,11 +13,22 @@ namespace MapaSala.Formularios
 {
     public partial class frmSalas : Form
     {
-        BindingSource dados;
+        DataTable dados;
+        int LinhaSelecionada;
         public frmSalas()
         {
             InitializeComponent();
-            dados = new BindingSource();
+            dados = new DataTable();
+
+            foreach (var atributos in typeof(DisciplinaEntidade).GetProperties())
+            {
+                dados.Columns.Add(atributos.Name);
+            }
+
+            dados.Rows.Add(1, "Matematica", "MAT");
+            dados.Rows.Add(2, "Português", "PORT");
+            dados.Rows.Add(3, "Física", "FIS");
+
             dtGridSalas.DataSource = dados;
         }
 
@@ -28,15 +39,43 @@ namespace MapaSala.Formularios
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            SalasEntidade sala = new SalasEntidade();
-            sala.Id = Convert.ToInt32(txtId.Text);
-            sala.Nome = txtNome.Text;
-            sala.IsLab = chkIsLab.Checked;
-            sala.NumeroCadeiras = Convert.ToInt32(txtNumCadeira.Value);
-            sala.NumeroComputadores = Convert.ToInt32(txtNumPc.Value);
-            sala.Disponivel = chkDisponivel.Checked;
+            SalasEntidade d = new SalasEntidade();
+            d.Id = Convert.ToInt32(numId.Value);
+            d.Nome = txtNome.Text;
+            
 
-            dados.Add(sala);
+            dados.Rows.Add(d.Linha());
+            LimparCampos();
+        }
+        private void LimparCampos()
+        {
+            numId.Value = 0;
+            txtNome.Text = "";
+             
+        }
+
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            dtGridSalas.Rows.RemoveAt(LinhaSelecionada);
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow editar = dtGridSalas.Rows[LinhaSelecionada];
+            editar.Cells[0].Value = numId.Value;
+            editar.Cells[1].Value = txtNome.Text;
+            
         }
     }
 }

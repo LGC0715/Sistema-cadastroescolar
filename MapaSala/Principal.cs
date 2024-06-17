@@ -45,5 +45,10 @@ namespace MapaSala
             frmDisciplina d = new frmDisciplina();
             d.ShowDialog();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
