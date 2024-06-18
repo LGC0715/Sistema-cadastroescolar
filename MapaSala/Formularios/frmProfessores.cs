@@ -26,8 +26,8 @@ namespace MapaSala.Formularios
             }
 
             dados.Rows.Add(1, "Alexandre Galvani", "Galvani");
-            dados.Rows.Add(2, "Português", "PORT");
-            dados.Rows.Add(3, "Física", "FIS");
+            dados.Rows.Add(2, "Carolina Cardinale", "Carol");
+            dados.Rows.Add(3, "Fernando Graciano", "Ferneco");
 
             dtGridProfessores.DataSource = dados;
 

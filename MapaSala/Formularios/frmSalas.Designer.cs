@@ -55,7 +55,7 @@ namespace MapaSala.Formularios
             this.txtNome.Location = new System.Drawing.Point(104, 51);
             this.txtNome.Margin = new System.Windows.Forms.Padding(5);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(164, 27);
+            this.txtNome.Size = new System.Drawing.Size(164, 23);
             this.txtNome.TabIndex = 0;
             // 
             // label1
@@ -64,7 +64,7 @@ namespace MapaSala.Formularios
             this.label1.Location = new System.Drawing.Point(104, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nome da sala";
             // 
@@ -74,7 +74,7 @@ namespace MapaSala.Formularios
             this.label2.Location = new System.Drawing.Point(280, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 20);
+            this.label2.Size = new System.Drawing.Size(172, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Número de computadores";
             // 
@@ -84,7 +84,7 @@ namespace MapaSala.Formularios
             this.label3.Location = new System.Drawing.Point(517, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 20);
+            this.label3.Size = new System.Drawing.Size(138, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Número de Cadeiras";
             // 
@@ -94,7 +94,7 @@ namespace MapaSala.Formularios
             this.label4.Location = new System.Drawing.Point(15, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(22, 20);
+            this.label4.Size = new System.Drawing.Size(19, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Id";
             // 
@@ -104,7 +104,7 @@ namespace MapaSala.Formularios
             this.chkIsLab.Location = new System.Drawing.Point(726, 32);
             this.chkIsLab.Margin = new System.Windows.Forms.Padding(5);
             this.chkIsLab.Name = "chkIsLab";
-            this.chkIsLab.Size = new System.Drawing.Size(126, 24);
+            this.chkIsLab.Size = new System.Drawing.Size(108, 21);
             this.chkIsLab.TabIndex = 8;
             this.chkIsLab.Text = "É laboratório";
             this.chkIsLab.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@ namespace MapaSala.Formularios
             this.chkDisponivel.Location = new System.Drawing.Point(726, 66);
             this.chkDisponivel.Margin = new System.Windows.Forms.Padding(5);
             this.chkDisponivel.Name = "chkDisponivel";
-            this.chkDisponivel.Size = new System.Drawing.Size(109, 24);
+            this.chkDisponivel.Size = new System.Drawing.Size(92, 21);
             this.chkDisponivel.TabIndex = 9;
             this.chkDisponivel.Text = "Disponível";
             this.chkDisponivel.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@ namespace MapaSala.Formularios
             this.txtNumPc.Location = new System.Drawing.Point(280, 49);
             this.txtNumPc.Margin = new System.Windows.Forms.Padding(5);
             this.txtNumPc.Name = "txtNumPc";
-            this.txtNumPc.Size = new System.Drawing.Size(200, 27);
+            this.txtNumPc.Size = new System.Drawing.Size(200, 23);
             this.txtNumPc.TabIndex = 11;
             // 
             // txtNumCadeira
@@ -144,11 +144,12 @@ namespace MapaSala.Formularios
             this.txtNumCadeira.Location = new System.Drawing.Point(513, 49);
             this.txtNumCadeira.Margin = new System.Windows.Forms.Padding(5);
             this.txtNumCadeira.Name = "txtNumCadeira";
-            this.txtNumCadeira.Size = new System.Drawing.Size(186, 27);
+            this.txtNumCadeira.Size = new System.Drawing.Size(186, 23);
             this.txtNumCadeira.TabIndex = 12;
             // 
             // dtGridSalas
             // 
+            this.dtGridSalas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridSalas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtGridSalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridSalas.Location = new System.Drawing.Point(20, 119);
@@ -157,12 +158,13 @@ namespace MapaSala.Formularios
             this.dtGridSalas.RowHeadersWidth = 51;
             this.dtGridSalas.Size = new System.Drawing.Size(1121, 541);
             this.dtGridSalas.TabIndex = 13;
+            this.dtGridSalas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridSalas_CellClick);
             // 
             // numId
             // 
             this.numId.Location = new System.Drawing.Point(19, 53);
             this.numId.Name = "numId";
-            this.numId.Size = new System.Drawing.Size(77, 27);
+            this.numId.Size = new System.Drawing.Size(77, 23);
             this.numId.TabIndex = 14;
             // 
             // btneditar
@@ -201,7 +203,7 @@ namespace MapaSala.Formularios
             // 
             // frmSalas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 692);
             this.Controls.Add(this.btneditar);

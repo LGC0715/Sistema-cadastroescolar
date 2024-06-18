@@ -49,7 +49,7 @@ namespace MapaSala.Formularios
             this.numId.Location = new System.Drawing.Point(20, 44);
             this.numId.Margin = new System.Windows.Forms.Padding(5);
             this.numId.Name = "numId";
-            this.numId.Size = new System.Drawing.Size(145, 30);
+            this.numId.Size = new System.Drawing.Size(145, 26);
             this.numId.TabIndex = 0;
             // 
             // label1
@@ -58,7 +58,7 @@ namespace MapaSala.Formularios
             this.label1.Location = new System.Drawing.Point(22, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 22);
+            this.label1.Size = new System.Drawing.Size(21, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Id";
             // 
@@ -67,7 +67,7 @@ namespace MapaSala.Formularios
             this.txtNomeCompleto.Location = new System.Drawing.Point(173, 47);
             this.txtNomeCompleto.Margin = new System.Windows.Forms.Padding(5);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
-            this.txtNomeCompleto.Size = new System.Drawing.Size(226, 30);
+            this.txtNomeCompleto.Size = new System.Drawing.Size(226, 26);
             this.txtNomeCompleto.TabIndex = 2;
             // 
             // label2
@@ -76,7 +76,7 @@ namespace MapaSala.Formularios
             this.label2.Location = new System.Drawing.Point(170, 13);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 22);
+            this.label2.Size = new System.Drawing.Size(119, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome Completo";
             // 
@@ -85,7 +85,7 @@ namespace MapaSala.Formularios
             this.txtApelido.Location = new System.Drawing.Point(412, 47);
             this.txtApelido.Margin = new System.Windows.Forms.Padding(5);
             this.txtApelido.Name = "txtApelido";
-            this.txtApelido.Size = new System.Drawing.Size(176, 30);
+            this.txtApelido.Size = new System.Drawing.Size(176, 26);
             this.txtApelido.TabIndex = 4;
             // 
             // label3
@@ -94,13 +94,13 @@ namespace MapaSala.Formularios
             this.label3.Location = new System.Drawing.Point(407, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 22);
+            this.label3.Size = new System.Drawing.Size(61, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Apelido";
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(598, 45);
+            this.btnSalvar.Location = new System.Drawing.Point(601, 36);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(125, 39);
@@ -124,7 +124,7 @@ namespace MapaSala.Formularios
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(733, 47);
+            this.btnLimpar.Location = new System.Drawing.Point(736, 38);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(5);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(125, 39);
@@ -135,7 +135,7 @@ namespace MapaSala.Formularios
             // 
             // btnexcluir
             // 
-            this.btnexcluir.Location = new System.Drawing.Point(868, 45);
+            this.btnexcluir.Location = new System.Drawing.Point(871, 36);
             this.btnexcluir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnexcluir.Name = "btnexcluir";
             this.btnexcluir.Size = new System.Drawing.Size(110, 39);
@@ -146,11 +146,11 @@ namespace MapaSala.Formularios
             // 
             // btneditar
             // 
-            this.btneditar.Font = new System.Drawing.Font("Microsoft JhengHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneditar.Location = new System.Drawing.Point(985, 45);
+            this.btneditar.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneditar.Location = new System.Drawing.Point(988, 36);
             this.btneditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btneditar.Name = "btneditar";
-            this.btneditar.Size = new System.Drawing.Size(103, 44);
+            this.btneditar.Size = new System.Drawing.Size(103, 39);
             this.btneditar.TabIndex = 10;
             this.btneditar.Text = "Editar";
             this.btneditar.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace MapaSala.Formularios
             // 
             // frmProfessores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 762);
             this.Controls.Add(this.btneditar);
