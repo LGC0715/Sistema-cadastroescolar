@@ -77,6 +77,7 @@ namespace MapaSala.Formularios
         private void btnexcluir_Click(object sender, EventArgs e)
         {
             dtGridSalas.Rows.RemoveAt(LinhaSelecionada);
+            LimparCampos();
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -84,8 +85,8 @@ namespace MapaSala.Formularios
             DataGridViewRow editar = dtGridSalas.Rows[LinhaSelecionada];
             editar.Cells[0].Value = numId.Value;
             editar.Cells[1].Value = txtNome.Text;
-            editar.Cells[2].Value = Convert.ToInt32(txtNumCadeira.Value);
-            editar.Cells[3].Value = Convert.ToInt32(txtNumPc.Value);
+            editar.Cells[3].Value = Convert.ToInt32(txtNumCadeira.Value);
+            editar.Cells[2].Value = Convert.ToInt32(txtNumPc.Value);
             editar.Cells[4].Value = Convert.ToBoolean(chkIsLab.Checked);
             editar.Cells[5].Value = Convert.ToBoolean(chkDisponivel.Checked);
 

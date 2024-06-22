@@ -62,7 +62,7 @@ namespace MapaSala.Formularios
         {
             LinhaSelecionada = e.RowIndex;
             txtNomeDisciplina.Text = dtGridDisciplina.Rows[LinhaSelecionada].Cells[1].Value.ToString();
-            txtSigla.Text = dtGridDisciplina.Rows[LinhaSelecionada].Cells[1].Value.ToString();
+            txtSigla.Text = dtGridDisciplina.Rows[LinhaSelecionada].Cells[2].Value.ToString();
             numId.Value = Convert.ToInt32(dtGridDisciplina.Rows[LinhaSelecionada].Cells[0].Value);
 
         }
@@ -70,6 +70,7 @@ namespace MapaSala.Formularios
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             dtGridDisciplina.Rows.RemoveAt(LinhaSelecionada);
+            LimparCampos();
         }
 
         private void button1_Click(object sender, EventArgs e)

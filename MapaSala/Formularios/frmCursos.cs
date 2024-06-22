@@ -76,6 +76,7 @@ namespace MapaSala.Formularios
         private void btnexcluir_Click(object sender, EventArgs e)
         {
             dtGridCursos.Rows.RemoveAt(LinhaSelecionada);
+            LimparCampos();
         }
 
         private void dtGridCursos_CellClick(object sender, DataGridViewCellEventArgs e)

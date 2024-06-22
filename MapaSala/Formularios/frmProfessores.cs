@@ -74,14 +74,16 @@ namespace MapaSala.Formularios
         private void btnexcluir_Click(object sender, EventArgs e)
         {
             dtGridProfessores.Rows.RemoveAt(LinhaSelecionada);
+            LimparCampos();
         }
 
         private void dtGridProfessores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LinhaSelecionada = e.RowIndex;
             txtNomeCompleto.Text = dtGridProfessores.Rows[LinhaSelecionada].Cells[1].Value.ToString();
-            txtApelido.Text = dtGridProfessores.Rows[LinhaSelecionada].Cells[1].Value.ToString();
+            txtApelido.Text = dtGridProfessores.Rows[LinhaSelecionada].Cells[2].Value.ToString();
             numId.Value = Convert.ToInt32(dtGridProfessores.Rows[LinhaSelecionada].Cells[0].Value);
+            
 
         }
     }
