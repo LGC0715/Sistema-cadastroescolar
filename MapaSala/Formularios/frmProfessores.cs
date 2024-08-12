@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MapaSala.DAO;
 using Model.Entitidades;
 
 namespace MapaSala.Formularios
@@ -14,23 +15,20 @@ namespace MapaSala.Formularios
     public partial class frmProfessores : Form
     {
         DataTable dados;
+        ProfessorDAO dao = new ProfessorDAO();
         int LinhaSelecionada;
         public frmProfessores()
         {
             InitializeComponent();
             dados = new DataTable();
-
             foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())
             {
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados.Rows.Add(1, "Alexandre Galvani", "Galvani");
-            dados.Rows.Add(2, "Carolina Cardinale", "Carol");
-            dados.Rows.Add(3, "Fernando Graciano", "Ferneco");
+            dados = dao.ObterProfessores();
 
             dtGridProfessores.DataSource = dados;
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
