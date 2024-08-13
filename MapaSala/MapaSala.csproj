@@ -49,7 +49,7 @@
     <Compile Include="DAO\CursoDAO.cs" />
     <Compile Include="DAO\DisciplinaDAO.cs" />
     <Compile Include="DAO\HorarioDAO.cs" />
-    <Compile Include="DAO\ProfessorDAO.cs" />
+    <Compile Include="DAO\ProfessoresDAO.cs" />
     <Compile Include="DAO\SalasDAO.cs" />
     <Compile Include="Formularios\frmCursos.cs">
       <SubType>Form</SubType>

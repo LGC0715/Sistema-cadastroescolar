@@ -10,12 +10,12 @@ using System.Data;
 
 namespace MapaSala.DAO
 {
-    public class ProfessorDAO
+    public class ProfessoresDAO
     {
         private string LinhaConexao = "Server=LS05MPF;Database=AULA_DS;User Id=sa;Password=admsasql;";// link do site
         private SqlConnection Conexao; //comunicacao programa/banco
 
-        public ProfessorDAO()
+        public ProfessoresDAO()
         {
             Conexao = new SqlConnection(LinhaConexao);
         }
