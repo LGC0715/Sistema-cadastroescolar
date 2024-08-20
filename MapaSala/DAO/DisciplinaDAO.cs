@@ -56,6 +56,7 @@ namespace MapaSala.DAO
                     dt.Rows.Add(d.Linha());
                 }
             }
+            Conexao.Close();
             return dt;
         }
     }

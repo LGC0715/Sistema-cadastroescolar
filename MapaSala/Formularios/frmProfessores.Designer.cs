@@ -40,6 +40,8 @@ namespace MapaSala.Formularios
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
+            this.txtpesquisa = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridProfessores)).BeginInit();
             this.SuspendLayout();
@@ -114,11 +116,11 @@ namespace MapaSala.Formularios
             this.dtGridProfessores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridProfessores.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtGridProfessores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridProfessores.Location = new System.Drawing.Point(20, 116);
+            this.dtGridProfessores.Location = new System.Drawing.Point(20, 192);
             this.dtGridProfessores.Margin = new System.Windows.Forms.Padding(5);
             this.dtGridProfessores.Name = "dtGridProfessores";
             this.dtGridProfessores.RowHeadersWidth = 51;
-            this.dtGridProfessores.Size = new System.Drawing.Size(1060, 594);
+            this.dtGridProfessores.Size = new System.Drawing.Size(1060, 518);
             this.dtGridProfessores.TabIndex = 7;
             this.dtGridProfessores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridProfessores_CellClick);
             // 
@@ -156,11 +158,31 @@ namespace MapaSala.Formularios
             this.btneditar.UseVisualStyleBackColor = true;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
+            // txtpesquisa
+            // 
+            this.txtpesquisa.Location = new System.Drawing.Point(20, 148);
+            this.txtpesquisa.Name = "txtpesquisa";
+            this.txtpesquisa.Size = new System.Drawing.Size(304, 26);
+            this.txtpesquisa.TabIndex = 11;
+            this.txtpesquisa.TextChanged += new System.EventHandler(this.txtpesquisa_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 18);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Pesquisar";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // frmProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 762);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtpesquisa);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.btnLimpar);
@@ -199,5 +221,7 @@ namespace MapaSala.Formularios
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button btneditar;
+        private System.Windows.Forms.TextBox txtpesquisa;
+        private System.Windows.Forms.Label label4;
     }
 }

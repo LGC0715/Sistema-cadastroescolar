@@ -84,6 +84,16 @@ namespace MapaSala.Formularios
             
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtpesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dtGridProfessores.DataSource = dao.Pesquisar(txtpesquisa.Text);
+        }
     }
     }
 
