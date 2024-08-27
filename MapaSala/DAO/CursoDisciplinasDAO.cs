@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace MapaSala.DAO
 {
-    public class CursoDAO
+    public class CursoDisplinaDAO
     {
         private string LinhaConexao = "Server=LS05MPF;Database=AULA_DS;User Id=sa;Password=admsasql;";// link do site
         private SqlConnection Conexao; //comunicacao programa/banco
 
-        public CursoDAO()
+        public CursoDisplinaDAO()
         {
             Conexao = new SqlConnection(LinhaConexao);
         }
@@ -31,7 +31,7 @@ namespace MapaSala.DAO
             comando.Parameters.Add(parametro1);
             comando.Parameters.Add(parametro2);
             comando.Parameters.Add(parametro3);
-            comando.Parameters.Add(parametro4); 
+            comando.Parameters.Add(parametro4);
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
@@ -57,7 +57,7 @@ namespace MapaSala.DAO
                     curso.Id = Convert.ToInt32(Leitura[0]);
                     curso.Nome = Leitura[1].ToString();
                     curso.Turno = Leitura[2].ToString();
-                    curso.Ativo = Convert.ToBoolean(Leitura[3]);
+                    //curso.Ativo = Leitura[3].checked();
                     dt.Rows.Add(curso.Linha());
                 }
             }
@@ -66,3 +66,4 @@ namespace MapaSala.DAO
         }
     }
 }
+
