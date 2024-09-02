@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Entitidades;
 
 
 namespace MapaSala.DAO
@@ -19,19 +20,18 @@ namespace MapaSala.DAO
         {
             Conexao = new SqlConnection(LinhaConexao);
         }
-        public void Inserir(cursoEntidades curso)
+        public void Inserir(CursoDisciplinaEntidade curso)
         {
             Conexao.Open();
-            string query = "insert into Curso(Id, Nome, Turno, Ativo) Values (@id, @nome, @turno, @ativo)";
+            string query = "insert into CursoDisciplinas (CursoId, DisciplinaId, Periodo) Values (@cursoid, @disciplinaid, @periodo)";
             SqlCommand comando = new SqlCommand(query, Conexao);
-            SqlParameter parametro1 = new SqlParameter("@id", curso.Id);
-            SqlParameter parametro2 = new SqlParameter("@nome", curso.Nome);
-            SqlParameter parametro3 = new SqlParameter("@turno", curso.Turno);
-            SqlParameter parametro4 = new SqlParameter("@ativo", curso.Ativo);
+            SqlParameter parametro1 = new SqlParameter("@cursoid", curso.CursoId);
+            SqlParameter parametro2 = new SqlParameter("@disciplinaid", curso.DisciplinaId);
+            SqlParameter parametro3 = new SqlParameter("@perido", curso.Periodo);
+
             comando.Parameters.Add(parametro1);
             comando.Parameters.Add(parametro2);
             comando.Parameters.Add(parametro3);
-            comando.Parameters.Add(parametro4);
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
@@ -54,9 +54,9 @@ namespace MapaSala.DAO
                 while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
                 {
                     cursoEntidades curso = new cursoEntidades();
-                    curso.Id = Convert.ToInt32(Leitura[0]);
-                    curso.Nome = Leitura[1].ToString();
-                    curso.Turno = Leitura[2].ToString();
+                    curso.CursoId = Convert.ToInt32(Leitura[0]);
+                    curso.DisciplinaId = Leitura[1].ToString();
+                    curso.Periodo = Leitura[2].ToString();
                     //curso.Ativo = Leitura[3].checked();
                     dt.Rows.Add(curso.Linha());
                 }

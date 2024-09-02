@@ -41,5 +41,10 @@ namespace MapaSala.Formularios
         {
 
         }
+
+        private void cbxCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

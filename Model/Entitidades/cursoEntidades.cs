@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Model.Entidades
         public string Nome { get; set; }
         public string Turno { get; set; }
         public bool Ativo { get; set; }
-
+        public SqlDbType CursoId { get; set; }
 
         public object[] Linha()
         {

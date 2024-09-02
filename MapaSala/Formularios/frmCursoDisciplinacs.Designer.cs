@@ -81,6 +81,7 @@ namespace MapaSala.Formularios
             this.cbxCursos.Name = "cbxCursos";
             this.cbxCursos.Size = new System.Drawing.Size(121, 21);
             this.cbxCursos.TabIndex = 4;
+            this.cbxCursos.SelectedIndexChanged += new System.EventHandler(this.cbxCursos_SelectedIndexChanged);
             // 
             // btnadd
             // 
