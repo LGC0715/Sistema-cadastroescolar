@@ -35,7 +35,7 @@ namespace MapaSala.DAO
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
-        public DataTable ObterCurso()
+        public DataTable ObterCursoDisciplina()
         {
             DataTable dt = new DataTable();
             Conexao.Open();
@@ -45,7 +45,7 @@ namespace MapaSala.DAO
 
             SqlDataReader Leitura = Comando.ExecuteReader();
 
-            foreach (var atributos in typeof(cursoEntidades).GetProperties())//laço de reoetição para ler listas
+            foreach (var atributos in typeof(CursoDisciplinaEntidade).GetProperties())//laço de reoetição para ler listas
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -53,11 +53,12 @@ namespace MapaSala.DAO
             {
                 while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
                 {
-                    cursoEntidades curso = new cursoEntidades();
-                    curso.CursoId = Convert.ToInt32(Leitura[0]);
-                    curso.DisciplinaId = Leitura[1].ToString();
-                    curso.Periodo = Leitura[2].ToString();
-                    //curso.Ativo = Leitura[3].checked();
+                    CursoDisciplinaEntidade curso = new CursoDisciplinaEntidade();
+                    curso.Id = Convert.ToInt32(Leitura[0]);
+                    curso.CursoId = Convert.ToInt32(Leitura[1]);
+                    curso.DisciplinaId = Convert.ToInt32(Leitura[2]);
+                    curso. NomeDisciplina = Leitura[3].ToString();
+                    curso.NomeCurso = Leitura[4].ToString();
                     dt.Rows.Add(curso.Linha());
                 }
             }
