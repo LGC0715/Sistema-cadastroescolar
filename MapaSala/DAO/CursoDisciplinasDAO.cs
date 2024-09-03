@@ -35,6 +35,8 @@ namespace MapaSala.DAO
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
+
+
         public DataTable ObterCursoDisciplina()
         {
             DataTable dt = new DataTable();

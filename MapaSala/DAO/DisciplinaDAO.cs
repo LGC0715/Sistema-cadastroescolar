@@ -22,7 +22,7 @@ namespace MapaSala.DAO
         public void Inserir(DisciplinaEntidade disciplina)
         {
             Conexao.Open();
-            string query = "insert into Disciplina(Nome, Sigla) Values (@nome, @sigla)";
+            string query = "insert into Disciplina (Nome, Sigla) Values (@nome, @sigla)";
             SqlCommand comando = new SqlCommand(query, Conexao);
             SqlParameter parametro1 = new SqlParameter("@nome", disciplina.Nome);
             SqlParameter parametro2 = new SqlParameter("@sigla", disciplina.Sigla);
@@ -31,6 +31,32 @@ namespace MapaSala.DAO
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
+
+        public DataTable PreencherComboBox()
+        {
+            DataTable dataTable = new DataTable();
+
+            string query = "SELECT Id, Nome FROM Disciplinas";
+
+            using (SqlConnection connection = new SqlConnection(LinhaConexao))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                try
+                {
+                    // Preenche o DataTable com os dados da consulta
+                    adapter.Fill(dataTable);
+                }
+                catch (Exception ex)
+                {
+                    // Lida com erros, se necessário
+                    throw new Exception("Erro ao acessar os dados: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
         public DataTable ObterProfessores()
         {
             DataTable dt = new DataTable();
