@@ -1,4 +1,5 @@
 ﻿using MapaSala.DAO;
+using Model.Entitidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,15 @@ namespace MapaSala.Formularios
 
         private void btnadd_Click(object sender, EventArgs e)
         {
+            CursoDisplinaDAO cursoDisplinaDao = new CursoDisplinaDAO();
 
+            CursoDisplinaEntidade entidade = new CursoDisplinaEntidade();
+
+            entidade.CursoId = Convert.ToInt32(cbxCursos.SelectIdValue);
+            entidade.DisciplinaId = Convert.ToInt32(cbDisciplinas.SelectedValue);
+            entidade.Periodo = cbperiodos.SelectedValue.ToString();
+
+            CursoDisplinaDAO.Inserir(entidade);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
