@@ -86,5 +86,10 @@ namespace MapaSala.Formularios
         {
 
         }
+
+        private void txtpesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
