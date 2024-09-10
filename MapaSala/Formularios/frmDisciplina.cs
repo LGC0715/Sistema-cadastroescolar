@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MapaSala.DAO;
 using Model.Entitidades;
 
 namespace MapaSala.Formularios
@@ -15,26 +16,21 @@ namespace MapaSala.Formularios
     public partial class frmDisciplina : Form
     {
         DataTable dados;
+        DisciplinaDAO dao = new DisciplinaDAO();
         int LinhaSelecionada;
-
         public frmDisciplina()
         {
             InitializeComponent();
             dados = new DataTable();
-            
-            foreach (var atributos in typeof(DisciplinaEntidade).GetProperties())
+            foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())
             {
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados.Rows.Add(1, "Matematica", "MAT");
-            dados.Rows.Add(2, "Português", "PORT");
-            dados.Rows.Add(3, "Física", "FIS");
+            dados = dao.ObterProfessores();
 
             dtGridDisciplina.DataSource = dados;
-            
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             DisciplinaEntidade d = new DisciplinaEntidade();
@@ -85,6 +81,16 @@ namespace MapaSala.Formularios
             editar.Cells[1].Value = txtNomeDisciplina.Text;
             editar.Cells[2].Value = txtSigla.Text;
 
+
+        }
+
+        private void txtpesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dtGridDisciplina.DataSource = dao.Pesquisar(txtpesquisa.Text);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

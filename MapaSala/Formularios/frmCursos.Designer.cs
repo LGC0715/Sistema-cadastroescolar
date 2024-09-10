@@ -41,6 +41,8 @@ namespace MapaSala.Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.numId = new System.Windows.Forms.NumericUpDown();
             this.chkativo = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtpesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numId)).BeginInit();
             this.SuspendLayout();
@@ -84,11 +86,11 @@ namespace MapaSala.Formularios
             this.dtGridCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridCursos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtGridCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridCursos.Location = new System.Drawing.Point(63, 143);
+            this.dtGridCursos.Location = new System.Drawing.Point(63, 188);
             this.dtGridCursos.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.dtGridCursos.Name = "dtGridCursos";
             this.dtGridCursos.RowHeadersWidth = 51;
-            this.dtGridCursos.Size = new System.Drawing.Size(951, 394);
+            this.dtGridCursos.Size = new System.Drawing.Size(951, 364);
             this.dtGridCursos.TabIndex = 18;
             this.dtGridCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridCursos_CellClick);
             // 
@@ -170,11 +172,29 @@ namespace MapaSala.Formularios
             this.chkativo.UseVisualStyleBackColor = true;
             this.chkativo.CheckedChanged += new System.EventHandler(this.chkIsLab_CheckedChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(59, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 16);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Pesquisar";
+            // 
+            // txtpesquisa
+            // 
+            this.txtpesquisa.Location = new System.Drawing.Point(62, 148);
+            this.txtpesquisa.Name = "txtpesquisa";
+            this.txtpesquisa.Size = new System.Drawing.Size(304, 22);
+            this.txtpesquisa.TabIndex = 23;
+            // 
             // frmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtpesquisa);
             this.Controls.Add(this.chkativo);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btnexcluir);
@@ -188,7 +208,7 @@ namespace MapaSala.Formularios
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numId);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -214,5 +234,7 @@ namespace MapaSala.Formularios
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numId;
         private System.Windows.Forms.CheckBox chkativo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtpesquisa;
     }
 }

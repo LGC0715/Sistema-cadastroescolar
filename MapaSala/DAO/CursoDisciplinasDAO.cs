@@ -41,26 +41,25 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT * FROM CURSO ORDER BY Id desc";
+            string query = @"SELECT C.Nome NomeCurso, D.Nome NomeDisciplina FROM CURSO_DISCIPLINA CD
+                            INNER JOIN CURSOS C ON (C.Id = CD.CursoId)
+                            INNER JOIN DISCIPLINAS D ON (D.Id = CD.Disciplina_Id)
+                            ORDER BY CD.Id DESC";
             SqlCommand Comando = new SqlCommand(query, Conexao);
-
-
             SqlDataReader Leitura = Comando.ExecuteReader();
 
-            foreach (var atributos in typeof(CursoDisciplinaEntidade).GetProperties())//laço de reoetição para ler listas
-            {
-                dt.Columns.Add(atributos.Name);
-            }
+            dt.Columns.Add("NomeCurso");
+            dt.Columns.Add("NomeDisciplina");
+            dt.Columns.Add("Periodo");
+
             if (Leitura.HasRows) //a linha existe? true or false
             {
                 while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
                 {
                     CursoDisciplinaEntidade curso = new CursoDisciplinaEntidade();
-                    curso.Id = Convert.ToInt32(Leitura[0]);
-                    curso.CursoId = Convert.ToInt32(Leitura[1]);
-                    curso.DisciplinaId = Convert.ToInt32(Leitura[2]);
-                    curso. NomeDisciplina = Leitura[3].ToString();
-                    curso.NomeCurso = Leitura[4].ToString();
+                    curso.NomeCurso = Leitura[0].ToString();
+                    curso. NomeDisciplina = Leitura[1].ToString();
+                    curso.Periodo = Leitura[2].ToString();
                     dt.Rows.Add(curso.Linha());
                 }
             }

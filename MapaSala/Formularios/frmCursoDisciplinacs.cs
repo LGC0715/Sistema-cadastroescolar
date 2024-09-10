@@ -16,6 +16,13 @@ namespace MapaSala.Formularios
     {
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
         CursoDAO cursoDAO = new CursoDAO();
+        CursoDisplinaDAO dao = new CursoDisplinaDAO();
+
+        private void AtualizarGrid(DataTable dados)
+        {
+            dtcursodisciplina.DataSource = dados;
+
+        }
 
         public frmCursoDisciplinacs()
         {
@@ -29,6 +36,7 @@ namespace MapaSala.Formularios
             cbxCursos.DisplayMember = "Nome";
             cbxCursos.ValueMember = "Id";
 
+            AtualizarGrid(dao.ObterCursoDisciplina());
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,15 +51,15 @@ namespace MapaSala.Formularios
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            CursoDisplinaDAO cursoDisplinaDao = new CursoDisplinaDAO();
+            CursoDisplinaDAO cursoDisciplinaDao = new CursoDisplinaDAO();
 
-            CursoDisplinaEntidade entidade = new CursoDisplinaEntidade();
+            CursoDisciplinaEntidade entidade = new CursoDisciplinaEntidade();
 
-            entidade.CursoId = Convert.ToInt32(cbxCursos.SelectIdValue);
+            entidade.CursoId = Convert.ToInt32(cbxCursos.SelectedValue);
             entidade.DisciplinaId = Convert.ToInt32(cbDisciplinas.SelectedValue);
-            entidade.Periodo = cbperiodos.SelectedValue.ToString();
+            entidade.Periodo = cbperiodos.SelectedItem.ToString();
 
-            CursoDisplinaDAO.Inserir(entidade);
+            cursoDisciplinaDao.Inserir(entidade);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
