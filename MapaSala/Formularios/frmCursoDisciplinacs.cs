@@ -60,6 +60,8 @@ namespace MapaSala.Formularios
             entidade.Periodo = cbperiodos.SelectedItem.ToString();
 
             cursoDisciplinaDao.Inserir(entidade);
+
+            AtualizarGrid(dao.ObterCursoDisciplina());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

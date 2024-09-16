@@ -23,11 +23,11 @@ namespace MapaSala.DAO
         public void Inserir(CursoDisciplinaEntidade curso)
         {
             Conexao.Open();
-            string query = "insert into CursoDisciplinas (CursoId, DisciplinaId, Periodo) Values (@cursoid, @disciplinaid, @periodo)";
+            string query = "insert into Curso_Disciplina (Curso_Id, Disciplina_Id, Periodo) Values (@cursoid, @disciplinaid, @periodo)";
             SqlCommand comando = new SqlCommand(query, Conexao);
             SqlParameter parametro1 = new SqlParameter("@cursoid", curso.CursoId);
             SqlParameter parametro2 = new SqlParameter("@disciplinaid", curso.DisciplinaId);
-            SqlParameter parametro3 = new SqlParameter("@perido", curso.Periodo);
+            SqlParameter parametro3 = new SqlParameter("@periodo", curso.Periodo);
 
             comando.Parameters.Add(parametro1);
             comando.Parameters.Add(parametro2);
@@ -41,8 +41,8 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = @"SELECT C.Nome NomeCurso, D.Nome NomeDisciplina FROM CURSO_DISCIPLINA CD
-                            INNER JOIN CURSOS C ON (C.Id = CD.CursoId)
+            string query = @"SELECT C.Nome NomeCurso, D.Nome NomeDisciplina, CD.Periodo Periodo FROM CURSO_DISCIPLINA CD
+                            INNER JOIN CURSOS C ON (C.Id = CD.Curso_Id)
                             INNER JOIN DISCIPLINAS D ON (D.Id = CD.Disciplina_Id)
                             ORDER BY CD.Id DESC";
             SqlCommand Comando = new SqlCommand(query, Conexao);

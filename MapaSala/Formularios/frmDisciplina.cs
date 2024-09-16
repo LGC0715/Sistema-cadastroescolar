@@ -27,7 +27,7 @@ namespace MapaSala.Formularios
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados = dao.ObterProfessores();
+            dados = dao.ObterDisciplina();
 
             dtGridDisciplina.DataSource = dados;
         }
