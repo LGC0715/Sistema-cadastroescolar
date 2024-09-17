@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MapaSala.DAO;
 using Model.Entitidades;
 
 namespace MapaSala.Formularios
@@ -14,6 +15,7 @@ namespace MapaSala.Formularios
     public partial class frmSalas : Form
     {
         DataTable dados;
+        SalasDAO dao = new SalasDAO();
         int LinhaSelecionada;
         public frmSalas()
         {
@@ -104,6 +106,11 @@ namespace MapaSala.Formularios
             chkDisponivel.Checked = Convert.ToBoolean(dtGridSalas.Rows[LinhaSelecionada].Cells[5].Value);
             numId.Value = Convert.ToInt32(dtGridSalas.Rows[LinhaSelecionada].Cells[0].Value);
 
+        }
+
+        private void txtpesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dtGridSalas.DataSource = dao.Pesquisar(txtpesquisa.Text);
         }
     }
 }

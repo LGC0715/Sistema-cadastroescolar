@@ -52,11 +52,11 @@
     <Compile Include="DAO\HorarioDAO.cs" />
     <Compile Include="DAO\ProfessoresDAO.cs" />
     <Compile Include="DAO\SalasDAO.cs" />
-    <Compile Include="Formularios\frmCursoDisciplinacs.cs">
+    <Compile Include="Formularios\frmCursoDisciplinas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmCursoDisciplinacs.Designer.cs">
-      <DependentUpon>frmCursoDisciplinacs.cs</DependentUpon>
+    <Compile Include="Formularios\frmCursoDisciplinas.Designer.cs">
+      <DependentUpon>frmCursoDisciplinas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmCursos.cs">
       <SubType>Form</SubType>
@@ -96,8 +96,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\frmCursoDisciplinacs.resx">
-      <DependentUpon>frmCursoDisciplinacs.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmCursoDisciplinas.resx">
+      <DependentUpon>frmCursoDisciplinas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCursos.resx">
       <DependentUpon>frmCursos.cs</DependentUpon>

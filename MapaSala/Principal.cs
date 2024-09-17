@@ -59,7 +59,7 @@ namespace MapaSala
 
         private void cursosXDisciplinasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCursoDisciplinacs x = new frmCursoDisciplinacs();
+            frmCursoDisciplinas x = new frmCursoDisciplinas();
             x.ShowDialog();
         }
     }

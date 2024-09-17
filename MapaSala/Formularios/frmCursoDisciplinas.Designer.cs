@@ -1,7 +1,7 @@
 ﻿
 namespace MapaSala.Formularios
 {
-    partial class frmCursoDisciplinacs
+    partial class frmCursoDisciplinas
     {
         /// <summary>
         /// Required designer variable.

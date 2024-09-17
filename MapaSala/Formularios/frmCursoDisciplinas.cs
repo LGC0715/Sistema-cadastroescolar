@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MapaSala.Formularios
 {
-    public partial class frmCursoDisciplinacs : Form
+    public partial class frmCursoDisciplinas : Form
     {
         DisciplinaDAO disciplinaDAO = new DisciplinaDAO();
         CursoDAO cursoDAO = new CursoDAO();
@@ -24,7 +24,7 @@ namespace MapaSala.Formularios
 
         }
 
-        public frmCursoDisciplinacs()
+        public frmCursoDisciplinas()
         {
             InitializeComponent();
 
