@@ -15,6 +15,7 @@ namespace MapaSala.DAO
         private string LinhaConexao = "Server=LS05MPF;Database=AULA_DS;User Id=sa;Password=admsasql;";// link do site
         private SqlConnection Conexao; //comunicacao programa/banco
 
+
         public ProfessoresDAO()
         {
             Conexao = new SqlConnection(LinhaConexao);

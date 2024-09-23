@@ -57,7 +57,7 @@ namespace MapaSala.Formularios
 
             entidade.CursoId = Convert.ToInt32(cbxCursos.SelectedValue);
             entidade.DisciplinaId = Convert.ToInt32(cbDisciplinas.SelectedValue);
-            entidade.Periodo = cbperiodos.SelectedItem.ToString();
+            entidade.Periodo = cbperiodos.SelectedItem.ToString(); //NÃO SEI PQ
 
             cursoDisciplinaDao.Inserir(entidade);
 
@@ -91,7 +91,7 @@ namespace MapaSala.Formularios
 
         private void txtpesquisa_TextChanged(object sender, EventArgs e)
         {
-
+            dtcursodisciplina.DataSource = dao.Pesquisar(txtpesquisa.Text);
         }
     }
 }

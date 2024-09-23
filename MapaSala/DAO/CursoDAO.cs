@@ -90,5 +90,42 @@ namespace MapaSala.DAO
             Conexao.Close();
             return dt;
         }
+        public DataTable Pesquisar(string pesquisa)
+        {
+            DataTable dt = new DataTable();
+            Conexao.Open();
+
+            string query = "";
+            if (string.IsNullOrEmpty(pesquisa))
+            {
+                query = "SELECT * FROM CURSOS ORDER BY ID desc";
+            }
+            else
+            {
+                query = "SELECT * FROM CURSOS WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
+            }
+
+            SqlCommand Comando = new SqlCommand(query, Conexao);
+            SqlDataReader Leitura = Comando.ExecuteReader();
+
+            foreach (var atributos in typeof(cursoEntidades).GetProperties())//laço de reoetição para ler listas
+            {
+                dt.Columns.Add(atributos.Name);
+            }
+            if (Leitura.HasRows) //a linha existe? true or false
+            {
+                while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
+                {
+                    cursoEntidades curso = new cursoEntidades();
+                    curso.Id = Convert.ToInt32(Leitura[0]);
+                    curso.Nome = Leitura[1].ToString();
+                    curso.Turno = Leitura[2].ToString();
+                    //curso.Ativo = Convert.ToBoolean(Leitura[3]); //ARRUMARR
+                    dt.Rows.Add(curso.Linha());
+                }
+            }
+            Conexao.Close();
+            return dt;
+        }
     }
 }

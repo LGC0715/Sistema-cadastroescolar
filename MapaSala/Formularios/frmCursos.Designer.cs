@@ -187,6 +187,7 @@ namespace MapaSala.Formularios
             this.txtpesquisa.Name = "txtpesquisa";
             this.txtpesquisa.Size = new System.Drawing.Size(304, 22);
             this.txtpesquisa.TabIndex = 23;
+            this.txtpesquisa.TextChanged += new System.EventHandler(this.txtpesquisa_TextChanged);
             // 
             // frmCursos
             // 
