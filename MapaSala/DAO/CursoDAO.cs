@@ -65,7 +65,7 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT * FROM CURSO ORDER BY Id desc";
+            string query = "SELECT Id, Nome, Turno, Ativo FROM CURSOS ORDER BY Id desc";
             SqlCommand Comando = new SqlCommand(query, Conexao);
 
 

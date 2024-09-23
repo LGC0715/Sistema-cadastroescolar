@@ -74,11 +74,17 @@ namespace MapaSala.DAO
             string query = "";
             if (string.IsNullOrEmpty(pesquisa))
             {
-                query = "SELECT * FROM CURSO_DISCIPLINA ORDER BY ID desc";
+                query = @"SELECT C.Nome NomeCurso, D.Nome NomeDisciplina, CD.Periodo Periodo FROM CURSO_DISCIPLINA CD
+                            INNER JOIN CURSOS C ON (C.Id = CD.Curso_Id)
+                            INNER JOIN DISCIPLINAS D ON (D.Id = CD.Disciplina_Id)
+                            ORDER BY CD.Id DESC";
             }
             else
             {
-                query = "SELECT * FROM CURSO_DISCIPLINA WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
+                query = @"SELECT C.Nome NomeCurso, D.Nome NomeDisciplina, CD.Periodo Periodo FROM CURSO_DISCIPLINA CD
+                            INNER JOIN CURSOS C ON (C.Id = CD.Curso_Id)
+                            INNER JOIN DISCIPLINAS D ON (D.Id = CD.Disciplina_Id)
+                            WHERE D.NOME LIKE '%"+pesquisa+"%' OR C.NOME LIKE '%"+pesquisa+ "%' ORDER BY CD.ID desc" ; //concatenação
             }
 
             SqlCommand Comando = new SqlCommand(query, Conexao);

@@ -14,21 +14,15 @@ namespace MapaSala.Formularios
 {
     public partial class frmProfessores : Form
     {
-        DataTable dados;
+       
         ProfessoresDAO dao = new ProfessoresDAO();
         int LinhaSelecionada;
         public frmProfessores()
         {
             InitializeComponent();
-            dados = new DataTable();
-            foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())
-            {
-                dados.Columns.Add(atributos.Name);
-            }
+                     
 
-            dados = dao.ObterProfessores();
-
-            dtGridProfessores.DataSource = dados;
+            dtGridProfessores.DataSource = dao.ObterProfessores();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -38,7 +32,9 @@ namespace MapaSala.Formularios
             p.Apelido = txtApelido.Text;
             p.Nome = txtNomeCompleto.Text;
 
-            dados.Rows.Add(p.Linha());
+            // dados.Rows.Add(p.Linha());
+            dao.Inserir(p);
+            dtGridProfessores.DataSource = dao.ObterProfessores();
             LimparCampos();
         }
 
@@ -78,9 +74,10 @@ namespace MapaSala.Formularios
         private void dtGridProfessores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LinhaSelecionada = e.RowIndex;
+            numId.Value = Convert.ToInt32(dtGridProfessores.Rows[LinhaSelecionada].Cells[0].Value);
             txtNomeCompleto.Text = dtGridProfessores.Rows[LinhaSelecionada].Cells[1].Value.ToString();
             txtApelido.Text = dtGridProfessores.Rows[LinhaSelecionada].Cells[2].Value.ToString();
-            numId.Value = Convert.ToInt32(dtGridProfessores.Rows[LinhaSelecionada].Cells[0].Value);
+            
             
 
         }

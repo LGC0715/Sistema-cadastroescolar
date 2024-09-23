@@ -14,25 +14,15 @@ namespace MapaSala.Formularios
 {
     public partial class frmCursos : Form
     {
-        DataTable dados;
         CursoDAO dao = new CursoDAO();
         int LinhaSelecionada;
         public frmCursos()
         {
-           
+
             InitializeComponent();
-            dados = new DataTable();
-            foreach (var atributos in typeof(cursoEntidades).GetProperties())
-            {
-                dados.Columns.Add(atributos.Name);
-            }
 
-            dados.Rows.Add(1, "desenvolvimento de sistemas", "manha", true);
-            dados.Rows.Add(2, "administraçao", "noite", true);
-            dados.Rows.Add(3, "serviços juridicos", "tarde", false);
-            dados.Rows.Add(4, " infonet", "tarde", true);
 
-            dtGridCursos.DataSource = dados;
+            dtGridCursos.DataSource = dao.ObterCurso();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -71,7 +61,8 @@ namespace MapaSala.Formularios
             curso.Turno = txtturno.Text;
             curso.Ativo = chkativo.Checked;
 
-            dados.Rows.Add(curso.Linha());
+            dao.Inserir(curso);
+            dtGridCursos.DataSource = dao.ObterCurso();
             LimparCampos();
         }
 

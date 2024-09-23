@@ -14,24 +14,14 @@ namespace MapaSala.Formularios
 {
     public partial class frmSalas : Form
     {
-        DataTable dados;
+        
         SalasDAO dao = new SalasDAO();
         int LinhaSelecionada;
         public frmSalas()
         {
             InitializeComponent();
-            dados = new DataTable();
-
-            foreach (var atributos in typeof(SalasEntidade).GetProperties())
-            {
-                dados.Columns.Add(atributos.Name);
-            }
-
-            dados.Rows.Add(1, "22", "10", "10", true, false);
-            dados.Rows.Add(3, "23", "10", "10", false, false);
-            dados.Rows.Add(2, "05", "20", "20", true, true);
-
-            dtGridSalas.DataSource = dados;
+            
+            dtGridSalas.DataSource = dao.ObterSalas();
         }
 
         private void frmSalas_Load(object sender, EventArgs e)
@@ -51,7 +41,9 @@ namespace MapaSala.Formularios
 
 
 
-            dados.Rows.Add(d.Linha());
+            //dados.Rows.Add(d.Linha());
+            dao.Inserir(d);
+            dtGridSalas.DataSource = dao.ObterSalas();
             LimparCampos();
         }
         private void LimparCampos()

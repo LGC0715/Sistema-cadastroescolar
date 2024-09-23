@@ -36,7 +36,7 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT * FROM PROFESSORES ORDER BY Id desc";
+            string query = "SELECT Id, Nome, Apelido FROM PROFESSORES ORDER BY Id desc";
             SqlCommand Comando = new SqlCommand(query, Conexao);
 
 
