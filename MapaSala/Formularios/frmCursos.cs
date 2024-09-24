@@ -59,6 +59,7 @@ namespace MapaSala.Formularios
             curso.Id = Convert.ToInt32(numId.Value);
             curso.Nome = txtNome.Text;
             curso.Turno = txtturno.Text;
+            curso.Sigla = txtSigla.Text;
             curso.Ativo = chkativo.Checked;
 
             dao.Inserir(curso);
@@ -78,7 +79,8 @@ namespace MapaSala.Formularios
             numId.Value = Convert.ToUInt32(dtGridCursos.Rows[LinhaSelecionada].Cells[0].Value);
             txtNome.Text = dtGridCursos.Rows[LinhaSelecionada].Cells[1].Value.ToString();
             txtturno.Text = dtGridCursos.Rows[LinhaSelecionada].Cells[2].Value.ToString();
-            chkativo.Checked = Convert.ToBoolean(dtGridCursos.Rows[LinhaSelecionada].Cells[3].Value);
+            txtSigla.Text = dtGridCursos.Rows[LinhaSelecionada].Cells[3].Value.ToString();
+            chkativo.Checked = Convert.ToBoolean(dtGridCursos.Rows[LinhaSelecionada].Cells[4].Value);
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -93,6 +95,16 @@ namespace MapaSala.Formularios
         private void txtpesquisa_TextChanged(object sender, EventArgs e)
         {
             dtGridCursos.DataSource = dao.Pesquisar(txtpesquisa.Text);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

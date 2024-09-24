@@ -12,12 +12,13 @@ namespace Model.Entidades
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Turno { get; set; }
+        public string Sigla { get; set; }
         public bool Ativo { get; set; }
         public SqlDbType CursoId { get; set; }
 
         public object[] Linha()
         {
-            return new object[] { Id, Nome, Turno, Ativo };
+            return new object[] { Id, Nome, Turno, Sigla, Ativo };
         }
 
     }

@@ -85,6 +85,7 @@ namespace MapaSala.Formularios
             // 
             // dtcursodisciplina
             // 
+            this.dtcursodisciplina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtcursodisciplina.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtcursodisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtcursodisciplina.GridColor = System.Drawing.SystemColors.ActiveCaption;
@@ -149,7 +150,7 @@ namespace MapaSala.Formularios
             this.txtpesquisa.TabIndex = 13;
             this.txtpesquisa.TextChanged += new System.EventHandler(this.txtpesquisa_TextChanged);
             // 
-            // frmCursoDisciplinacs
+            // frmCursoDisciplinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +165,8 @@ namespace MapaSala.Formularios
             this.Controls.Add(this.cbxCursos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Disciplinas);
-            this.Name = "frmCursoDisciplinacs";
+            this.Name = "frmCursoDisciplinas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCursoDisciplinacs";
             ((System.ComponentModel.ISupportInitialize)(this.dtcursodisciplina)).EndInit();
             this.ResumeLayout(false);

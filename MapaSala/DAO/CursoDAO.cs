@@ -22,20 +22,20 @@ namespace MapaSala.DAO
         public void Inserir(cursoEntidades curso)
         {
             Conexao.Open();
-            string query = "insert into Curso(Id, Nome, Turno, Ativo) Values (@id, @nome, @turno, @ativo)";
+            string query = "insert into Cursos(Nome, Turno,Sigla, Ativo) Values (@nome, @turno,@sigla,@ativo)";
             SqlCommand comando = new SqlCommand(query, Conexao);
-            SqlParameter parametro1 = new SqlParameter("@id", curso.Id);
             SqlParameter parametro2 = new SqlParameter("@nome", curso.Nome);
             SqlParameter parametro3 = new SqlParameter("@turno", curso.Turno);
-            SqlParameter parametro4 = new SqlParameter("@ativo", curso.Ativo);
-            comando.Parameters.Add(parametro1);
+            SqlParameter parametro4 = new SqlParameter("@sigla", curso.Sigla);
+            SqlParameter parametro5 = new SqlParameter("@ativo", curso.Ativo);
+
             comando.Parameters.Add(parametro2);
             comando.Parameters.Add(parametro3);
-            comando.Parameters.Add(parametro4); 
+            comando.Parameters.Add(parametro4);
+            comando.Parameters.Add(parametro5);
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
-
         public DataTable PreencherComboBox()
         {
             DataTable dataTable = new DataTable();
@@ -65,7 +65,7 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, Turno, Ativo FROM CURSOS ORDER BY Id desc";
+            string query = "SELECT Id, Nome, Turno,Sigla, Ativo FROM CURSOS ORDER BY Id desc";
             SqlCommand Comando = new SqlCommand(query, Conexao);
 
 
@@ -83,7 +83,8 @@ namespace MapaSala.DAO
                     curso.Id = Convert.ToInt32(Leitura[0]);
                     curso.Nome = Leitura[1].ToString();
                     curso.Turno = Leitura[2].ToString();
-                    curso.Ativo = Convert.ToBoolean(Leitura[3]);
+                    curso.Sigla = Leitura[3].ToString();
+                    curso.Ativo = Convert.ToBoolean(Leitura[4]);
                     dt.Rows.Add(curso.Linha());
                 }
             }
@@ -98,11 +99,11 @@ namespace MapaSala.DAO
             string query = "";
             if (string.IsNullOrEmpty(pesquisa))
             {
-                query = "SELECT * FROM CURSOS ORDER BY ID desc";
+                query = "SELECT Id, Nome, Turno,Sigla, Ativo FROM Cursos ORDER BY ID desc";
             }
             else
             {
-                query = "SELECT * FROM CURSOS WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
+                query = "SELECT Id, Nome, Turno,Sigla, Ativo FROM Cursos WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
             }
 
             SqlCommand Comando = new SqlCommand(query, Conexao);
@@ -120,7 +121,8 @@ namespace MapaSala.DAO
                     curso.Id = Convert.ToInt32(Leitura[0]);
                     curso.Nome = Leitura[1].ToString();
                     curso.Turno = Leitura[2].ToString();
-                    //curso.Ativo = Convert.ToBoolean(Leitura[3]); //ARRUMARR
+                    curso.Sigla = Leitura[3].ToString();
+                    curso.Ativo = Convert.ToBoolean(Leitura[4]);
                     dt.Rows.Add(curso.Linha());
                 }
             }
