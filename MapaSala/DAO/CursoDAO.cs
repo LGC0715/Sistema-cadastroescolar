@@ -103,7 +103,7 @@ namespace MapaSala.DAO
             }
             else
             {
-                query = "SELECT Id, Nome, Turno,Sigla, Ativo FROM Cursos WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
+                query = "SELECT Id, Nome, Turno, Sigla, Ativo FROM Cursos WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
             }
 
             SqlCommand Comando = new SqlCommand(query, Conexao);

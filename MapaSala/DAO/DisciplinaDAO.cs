@@ -22,12 +22,14 @@ namespace MapaSala.DAO
         public void Inserir(DisciplinaEntidade disciplina)
         {
             Conexao.Open();
-            string query = "insert into Disciplina (Nome, Sigla) Values (@nome, @sigla)";
+            string query = "insert into Disciplinas (Nome, Sigla, Ativo) Values (@nome, @sigla, @ativo)";
             SqlCommand comando = new SqlCommand(query, Conexao);
             SqlParameter parametro1 = new SqlParameter("@nome", disciplina.Nome);
             SqlParameter parametro2 = new SqlParameter("@sigla", disciplina.Sigla);
+            SqlParameter parametro3 = new SqlParameter("@ativo", disciplina.Ativo);
             comando.Parameters.Add(parametro1);
             comando.Parameters.Add(parametro2);
+            comando.Parameters.Add(parametro3);
             comando.ExecuteNonQuery(); //nao retorna nd
             Conexao.Close();
         }
@@ -61,13 +63,13 @@ namespace MapaSala.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT * FROM DISCIPLINAS ORDER BY Id desc";
+            string query = "SELECT Id, Nome, Sigla, Ativo FROM DISCIPLINAS ORDER BY Id desc";
             SqlCommand Comando = new SqlCommand(query, Conexao);
 
 
             SqlDataReader Leitura = Comando.ExecuteReader();
 
-            foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())//laço de reoetição para ler listas
+            foreach (var atributos in typeof(DisciplinaEntidade).GetProperties())//laço de reoetição para ler listas
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -79,6 +81,8 @@ namespace MapaSala.DAO
                     d.Id = Convert.ToInt32(Leitura[0]);
                     d.Nome = Leitura[1].ToString();
                     d.Sigla = Leitura[2].ToString();
+                    d.Ativo = Convert.ToBoolean(Leitura[3]);
+
                     dt.Rows.Add(d.Linha());
                 }
             }
@@ -93,11 +97,11 @@ namespace MapaSala.DAO
             string query = "";
             if (string.IsNullOrEmpty(pesquisa))
             {
-                query = "SELECT * FROM DISCIPLINAS ORDER BY ID desc";
+                query = "SELECT Id, Nome, Sigla, Ativo FROM DISCIPLINAS ORDER BY ID desc";
             }
             else
             {
-                query = "SELECT * FROM DISCIPLINAS WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
+                query = "SELECT Id, Nome, Sigla, Ativo FROM DISCIPLINAS WHERE NOME LIKE '%" + pesquisa + "%' ORDER BY ID desc"; //concatenação
             }
 
             SqlCommand Comando = new SqlCommand(query, Conexao);
@@ -115,6 +119,8 @@ namespace MapaSala.DAO
                     d.Id = Convert.ToInt32(Leitura[0]);
                     d.Nome = Leitura[1].ToString();
                     d.Sigla = Leitura[2].ToString();
+                    d.Ativo = Convert.ToBoolean(Leitura[3]);
+
                     dt.Rows.Add(d.Linha());
                 }
             }

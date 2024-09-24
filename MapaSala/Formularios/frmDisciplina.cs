@@ -33,12 +33,15 @@ namespace MapaSala.Formularios
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             DisciplinaEntidade d = new DisciplinaEntidade();
             d.Id = Convert.ToInt32(numId.Value);
             d.Nome = txtNomeDisciplina.Text;
             d.Sigla = txtSigla.Text;
+            d.Ativo = chkativo.Checked;
 
-            dados.Rows.Add(d.Linha());
+            dao.Inserir(d);
+            dtGridDisciplina.DataSource = dao.ObterDisciplina();
             LimparCampos();
         }
 
@@ -60,6 +63,8 @@ namespace MapaSala.Formularios
             txtNomeDisciplina.Text = dtGridDisciplina.Rows[LinhaSelecionada].Cells[1].Value.ToString();
             txtSigla.Text = dtGridDisciplina.Rows[LinhaSelecionada].Cells[2].Value.ToString();
             numId.Value = Convert.ToInt32(dtGridDisciplina.Rows[LinhaSelecionada].Cells[0].Value);
+            chkativo.Checked = Convert.ToBoolean(dtGridDisciplina.Rows[LinhaSelecionada].Cells[3].Value);
+
 
         }
 
@@ -80,6 +85,7 @@ namespace MapaSala.Formularios
             editar.Cells[0].Value = numId.Value;
             editar.Cells[1].Value = txtNomeDisciplina.Text;
             editar.Cells[2].Value = txtSigla.Text;
+            editar.Cells[3].Value = chkativo.Checked;
 
 
         }
