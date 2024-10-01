@@ -52,6 +52,30 @@
     <Compile Include="DAO\HorarioDAO.cs" />
     <Compile Include="DAO\ProfessoresDAO.cs" />
     <Compile Include="DAO\SalasDAO.cs" />
+    <Compile Include="Formularios\editar\frmEditarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarCurso.Designer.cs">
+      <DependentUpon>frmEditarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarDisciplina.Designer.cs">
+      <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarProfessor.Designer.cs">
+      <DependentUpon>frmEditarProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\editar\frmEditarSalas.Designer.cs">
+      <DependentUpon>frmEditarSalas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCursoDisciplinas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +112,12 @@
     <Compile Include="Formularios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\MapaSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MapaSala.Designer.cs">
+      <DependentUpon>MapaSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\editar\frmEditarDisciplina.resx">
+      <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCursoDisciplinas.resx">
       <DependentUpon>frmCursoDisciplinas.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSalas.resx">
       <DependentUpon>frmSalas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MapaSala.resx">
+      <DependentUpon>MapaSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

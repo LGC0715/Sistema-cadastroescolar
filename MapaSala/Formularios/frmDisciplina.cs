@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MapaSala.DAO;
+using MapaSala.Formularios.editar;
 using Model.Entitidades;
 
 namespace MapaSala.Formularios
@@ -98,6 +99,17 @@ namespace MapaSala.Formularios
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtGridDisciplina_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtGridDisciplina_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmEditarDisciplina editar = new frmEditarDisciplina;
+            editar.ShowDialog();
         }
     }
 }

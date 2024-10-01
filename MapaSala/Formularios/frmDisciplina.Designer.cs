@@ -127,6 +127,8 @@ namespace MapaSala.Formularios
             this.dtGridDisciplina.Size = new System.Drawing.Size(770, 347);
             this.dtGridDisciplina.TabIndex = 7;
             this.dtGridDisciplina.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridDisciplina_CellClick);
+            this.dtGridDisciplina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridDisciplina_CellContentClick);
+            this.dtGridDisciplina.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridDisciplina_CellDoubleClick);
             // 
             // btnLimpar
             // 
@@ -175,7 +177,7 @@ namespace MapaSala.Formularios
             // txtpesquisa
             // 
             this.txtpesquisa.Location = new System.Drawing.Point(18, 119);
-            this.txtpesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtpesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txtpesquisa.Name = "txtpesquisa";
             this.txtpesquisa.Size = new System.Drawing.Size(229, 20);
             this.txtpesquisa.TabIndex = 13;
