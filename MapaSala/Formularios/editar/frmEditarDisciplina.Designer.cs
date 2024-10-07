@@ -87,12 +87,13 @@ namespace MapaSala.Formularios.editar
             this.editardisc.TabIndex = 5;
             this.editardisc.Text = "Editar";
             this.editardisc.UseVisualStyleBackColor = true;
+            this.editardisc.Click += new System.EventHandler(this.editardisc_Click);
             // 
             // frmEditarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(253, 306);
             this.Controls.Add(this.editardisc);
             this.Controls.Add(this.chkativodisceditar);
             this.Controls.Add(this.txtsigladisceditar);
@@ -100,6 +101,7 @@ namespace MapaSala.Formularios.editar
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEditarDisciplina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditarDisciplina";
             this.ResumeLayout(false);
             this.PerformLayout();
