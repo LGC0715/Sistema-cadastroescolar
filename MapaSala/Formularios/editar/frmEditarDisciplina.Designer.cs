@@ -1,5 +1,5 @@
 ﻿
-namespace MapaSala.Formularios.editar
+namespace MapaSala.Formularios.Editar
 {
     partial class frmEditarDisciplina
     {
@@ -34,7 +34,9 @@ namespace MapaSala.Formularios.editar
             this.txtnomedisceditar = new System.Windows.Forms.TextBox();
             this.txtsigladisceditar = new System.Windows.Forms.TextBox();
             this.chkativodisceditar = new System.Windows.Forms.CheckBox();
-            this.editardisc = new System.Windows.Forms.Button();
+            this.btn_Salvar = new System.Windows.Forms.Button();
+            this.label_id = new System.Windows.Forms.Label();
+            this.btn_Excluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,22 +81,43 @@ namespace MapaSala.Formularios.editar
             this.chkativodisceditar.Text = "Ativo";
             this.chkativodisceditar.UseVisualStyleBackColor = true;
             // 
-            // editardisc
+            // btn_Salvar
             // 
-            this.editardisc.Location = new System.Drawing.Point(48, 239);
-            this.editardisc.Name = "editardisc";
-            this.editardisc.Size = new System.Drawing.Size(154, 23);
-            this.editardisc.TabIndex = 5;
-            this.editardisc.Text = "Editar";
-            this.editardisc.UseVisualStyleBackColor = true;
-            this.editardisc.Click += new System.EventHandler(this.editardisc_Click);
+            this.btn_Salvar.Location = new System.Drawing.Point(48, 239);
+            this.btn_Salvar.Name = "btn_Salvar";
+            this.btn_Salvar.Size = new System.Drawing.Size(80, 23);
+            this.btn_Salvar.TabIndex = 5;
+            this.btn_Salvar.Text = "Salvar";
+            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click_1);
+            // 
+            // label_id
+            // 
+            this.label_id.AutoSize = true;
+            this.label_id.Location = new System.Drawing.Point(45, 34);
+            this.label_id.Name = "label_id";
+            this.label_id.Size = new System.Drawing.Size(35, 13);
+            this.label_id.TabIndex = 6;
+            this.label_id.Text = "label3";
+            // 
+            // btn_Excluir
+            // 
+            this.btn_Excluir.Location = new System.Drawing.Point(134, 239);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(80, 23);
+            this.btn_Excluir.TabIndex = 7;
+            this.btn_Excluir.Text = "Excluir";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click_1);
             // 
             // frmEditarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 306);
-            this.Controls.Add(this.editardisc);
+            this.Controls.Add(this.btn_Excluir);
+            this.Controls.Add(this.label_id);
+            this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.chkativodisceditar);
             this.Controls.Add(this.txtsigladisceditar);
             this.Controls.Add(this.txtnomedisceditar);
@@ -115,6 +138,8 @@ namespace MapaSala.Formularios.editar
         private System.Windows.Forms.TextBox txtnomedisceditar;
         private System.Windows.Forms.TextBox txtsigladisceditar;
         private System.Windows.Forms.CheckBox chkativodisceditar;
-        private System.Windows.Forms.Button editardisc;
+        private System.Windows.Forms.Button btn_Salvar;
+        private System.Windows.Forms.Label label_id;
+        private System.Windows.Forms.Button btn_Excluir;
     }
 }
