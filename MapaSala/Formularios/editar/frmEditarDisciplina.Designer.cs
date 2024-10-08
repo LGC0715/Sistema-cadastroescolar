@@ -35,7 +35,7 @@ namespace MapaSala.Formularios.Editar
             this.txtsigladisceditar = new System.Windows.Forms.TextBox();
             this.chkativodisceditar = new System.Windows.Forms.CheckBox();
             this.btn_Salvar = new System.Windows.Forms.Button();
-            this.label_id = new System.Windows.Forms.Label();
+            this.numId = new System.Windows.Forms.Label();
             this.btn_Excluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,14 +91,15 @@ namespace MapaSala.Formularios.Editar
             this.btn_Salvar.UseVisualStyleBackColor = true;
             this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click_1);
             // 
-            // label_id
+            // numId
             // 
-            this.label_id.AutoSize = true;
-            this.label_id.Location = new System.Drawing.Point(45, 34);
-            this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(35, 13);
-            this.label_id.TabIndex = 6;
-            this.label_id.Text = "label3";
+            this.numId.AutoSize = true;
+            this.numId.Location = new System.Drawing.Point(45, 34);
+            this.numId.Name = "numId";
+            this.numId.Size = new System.Drawing.Size(35, 13);
+            this.numId.TabIndex = 6;
+            this.numId.Text = "label3";
+            this.numId.Click += new System.EventHandler(this.numId_Click);
             // 
             // btn_Excluir
             // 
@@ -116,7 +117,7 @@ namespace MapaSala.Formularios.Editar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 306);
             this.Controls.Add(this.btn_Excluir);
-            this.Controls.Add(this.label_id);
+            this.Controls.Add(this.numId);
             this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.chkativodisceditar);
             this.Controls.Add(this.txtsigladisceditar);
@@ -139,7 +140,7 @@ namespace MapaSala.Formularios.Editar
         private System.Windows.Forms.TextBox txtsigladisceditar;
         private System.Windows.Forms.CheckBox chkativodisceditar;
         private System.Windows.Forms.Button btn_Salvar;
-        private System.Windows.Forms.Label label_id;
+        private System.Windows.Forms.Label numId;
         private System.Windows.Forms.Button btn_Excluir;
     }
 }
