@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model.Entidades
 {
-    public class cursoEntidades
+    public class CursoEntidades
     {
         public int Id { get; set; }
         public string Nome { get; set; }

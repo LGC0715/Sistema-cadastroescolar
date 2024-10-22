@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Usuarios.cs" />
     <Compile Include="DAO\CursoDAO.cs" />
     <Compile Include="DAO\CursoDisciplinasDAO.cs" />
     <Compile Include="DAO\DisciplinaDAO.cs" />
@@ -82,6 +83,12 @@
     <Compile Include="Formularios\editar\frmEditarSalas.Designer.cs">
       <DependentUpon>frmEditarSalas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastrarUsuario.Designer.cs">
+      <DependentUpon>frmCadastrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCursoDisciplinas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +119,12 @@
     <Compile Include="Formularios\frmSalas.Designer.cs">
       <DependentUpon>frmSalas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +151,9 @@
     <EmbeddedResource Include="Formularios\editar\frmEditarDisciplina.resx">
       <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastrarUsuario.resx">
+      <DependentUpon>frmCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCursoDisciplinas.resx">
       <DependentUpon>frmCursoDisciplinas.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSalas.resx">
       <DependentUpon>frmSalas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MapaSala.resx">
       <DependentUpon>MapaSala.cs</DependentUpon>
