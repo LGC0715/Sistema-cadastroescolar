@@ -1,7 +1,7 @@
 ﻿
 namespace MapaSala.Formularios
 {
-    partial class frmUsuario
+    partial class frmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,84 +29,90 @@ namespace MapaSala.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnnovo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Pesquisar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgridUsuarios1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisar1 = new System.Windows.Forms.TextBox();
+            this.btnNovo1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridUsuarios1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dtgridUsuarios1
+            // 
+            this.dtgridUsuarios1.AllowUserToAddRows = false;
+            this.dtgridUsuarios1.AllowUserToDeleteRows = false;
+            this.dtgridUsuarios1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgridUsuarios1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgridUsuarios1.Location = new System.Drawing.Point(22, 74);
+            this.dtgridUsuarios1.Name = "dtgridUsuarios1";
+            this.dtgridUsuarios1.ReadOnly = true;
+            this.dtgridUsuarios1.Size = new System.Drawing.Size(756, 364);
+            this.dtgridUsuarios1.TabIndex = 3;
+            this.dtgridUsuarios1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgridUsuarios1_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.Pesquisar);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.btnnovo);
-            this.groupBox1.Location = new System.Drawing.Point(46, 34);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtPesquisar1);
+            this.groupBox1.Controls.Add(this.btnNovo1);
+            this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(677, 363);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(756, 56);
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastro";
+            this.groupBox1.Text = "Usuários";
             // 
-            // btnnovo
+            // label1
             // 
-            this.btnnovo.Location = new System.Drawing.Point(25, 37);
-            this.btnnovo.Name = "btnnovo";
-            this.btnnovo.Size = new System.Drawing.Size(116, 23);
-            this.btnnovo.TabIndex = 0;
-            this.btnnovo.Text = "Novo";
-            this.btnnovo.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(127, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Pesquisar";
             // 
-            // textBox1
+            // txtPesquisar1
             // 
-            this.textBox1.Location = new System.Drawing.Point(295, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPesquisar1.Location = new System.Drawing.Point(186, 19);
+            this.txtPesquisar1.Name = "txtPesquisar1";
+            this.txtPesquisar1.Size = new System.Drawing.Size(478, 20);
+            this.txtPesquisar1.TabIndex = 1;
+            this.txtPesquisar1.TextChanged += new System.EventHandler(this.txtPesquisar1_TextChanged_1);
             // 
-            // Pesquisar
+            // btnNovo1
             // 
-            this.Pesquisar.AutoSize = true;
-            this.Pesquisar.Location = new System.Drawing.Point(182, 42);
-            this.Pesquisar.Name = "Pesquisar";
-            this.Pesquisar.Size = new System.Drawing.Size(59, 13);
-            this.Pesquisar.TabIndex = 1;
-            this.Pesquisar.Text = "Pesquisar :";
+            this.btnNovo1.Location = new System.Drawing.Point(6, 19);
+            this.btnNovo1.Name = "btnNovo1";
+            this.btnNovo1.Size = new System.Drawing.Size(107, 23);
+            this.btnNovo1.TabIndex = 0;
+            this.btnNovo1.Text = "Novo Usuário";
+            this.btnNovo1.UseVisualStyleBackColor = true;
+            this.btnNovo1.Click += new System.EventHandler(this.btnNovo1_Click_1);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(633, 266);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // frmUsuario
+            // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtgridUsuarios1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmUsuario";
+            this.Name = "frmUsuarios";
             this.Text = "frmUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridUsuarios1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label Pesquisar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnnovo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridView dtgridUsuarios1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPesquisar1;
+        private System.Windows.Forms.Button btnNovo1;
     }
 }

@@ -62,5 +62,11 @@ namespace MapaSala
             frmCursoDisciplinas x = new frmCursoDisciplinas();
             x.ShowDialog();
         }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios z = new frmUsuarios();
+            z.ShowDialog();
+        }
     }
 }

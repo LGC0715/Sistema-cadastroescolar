@@ -19,7 +19,7 @@ namespace MapaSala.DAO
         {
             Conexao = new SqlConnection(LinhaConexao);
         }
-        public void Inserir(cursoEntidades curso)
+        public void Inserir(CursoEntidades curso)
         {
             Conexao.Open();
             string query = "insert into Cursos(Nome, Turno,Sigla, Ativo) Values (@nome, @turno,@sigla,@ativo)";
@@ -71,7 +71,7 @@ namespace MapaSala.DAO
 
             SqlDataReader Leitura = Comando.ExecuteReader();
 
-            foreach (var atributos in typeof(cursoEntidades).GetProperties())//laço de reoetição para ler listas
+            foreach (var atributos in typeof(CursoEntidades).GetProperties())//laço de reoetição para ler listas
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -79,7 +79,7 @@ namespace MapaSala.DAO
             {
                 while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
                 {
-                    cursoEntidades curso = new cursoEntidades();
+                    CursoEntidades curso = new CursoEntidades();
                     curso.Id = Convert.ToInt32(Leitura[0]);
                     curso.Nome = Leitura[1].ToString();
                     curso.Turno = Leitura[2].ToString();
@@ -109,7 +109,7 @@ namespace MapaSala.DAO
             SqlCommand Comando = new SqlCommand(query, Conexao);
             SqlDataReader Leitura = Comando.ExecuteReader();
 
-            foreach (var atributos in typeof(cursoEntidades).GetProperties())//laço de reoetição para ler listas
+            foreach (var atributos in typeof(CursoEntidades).GetProperties())//laço de reoetição para ler listas
             {
                 dt.Columns.Add(atributos.Name);
             }
@@ -117,7 +117,7 @@ namespace MapaSala.DAO
             {
                 while (Leitura.Read())//para pegar mais de um registro, faz uma consulta
                 {
-                    cursoEntidades curso = new cursoEntidades();
+                    CursoEntidades curso = new CursoEntidades();
                     curso.Id = Convert.ToInt32(Leitura[0]);
                     curso.Nome = Leitura[1].ToString();
                     curso.Turno = Leitura[2].ToString();

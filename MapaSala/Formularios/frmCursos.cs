@@ -55,7 +55,7 @@ namespace MapaSala.Formularios
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            cursoEntidades curso = new cursoEntidades();
+            CursoEntidades curso = new CursoEntidades();
             curso.Id = Convert.ToInt32(numId.Value);
             curso.Nome = txtNome.Text;
             curso.Turno = txtturno.Text;

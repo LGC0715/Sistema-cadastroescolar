@@ -20,7 +20,7 @@ namespace MapaSala.Formularios
     {
         DataTable dados;
         DisciplinaDAO dao = new DisciplinaDAO();
-        int LinhaSelecionada;
+        
         public frmDisciplina()
         {
             InitializeComponent();
